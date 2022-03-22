@@ -22,7 +22,7 @@ public class Teacher {
     public void evaluate(Student student) {
         String text = "Преподаватель %s оценил студента с именем %s по предмету %s на оценку %s.\n";
         int grade = (int) (Math.random() * 4) + 2;
-        String textGrade = null;
+        String textGrade;
         switch (grade) {
             case 5:
                 textGrade = "отлично";
@@ -33,7 +33,7 @@ public class Teacher {
             case 3:
                 textGrade = "удовлетворительно";
                 break;
-            case 2:
+            default:
                 textGrade = "неудовлетворительно";
                 break;
         }
