@@ -9,23 +9,19 @@ public class Task2 {
         int min = Integer.MAX_VALUE;
         int count0 = 0;
         int sum0 = 0;
-        int temp = 0;
         int[] numbers = new int[100];
-        int[] counter0 = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(10000);
         }
         for(int number : numbers) {
-            temp = number;
-            if (max < temp) {
-                max = temp;
+            if (max < number) {
+                max = number;
             }
-            if (min > temp) {
-                min = temp;
+            if (min > number) {
+                min = number;
             }
             if (number % 10 == 0) {
-                counter0[count0] = number;
-                sum0 += counter0[count0];
+                sum0 += number;
                 count0++;
             }
         }

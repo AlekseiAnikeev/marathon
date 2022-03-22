@@ -6,9 +6,8 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean isExit = true;
-        String city;
         while (isExit) {
-            city = scanner.nextLine();
+            String city = scanner.nextLine();
             if (city.equals("Stop")) {
                 isExit = false;
                 continue;

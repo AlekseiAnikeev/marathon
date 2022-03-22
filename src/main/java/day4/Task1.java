@@ -22,7 +22,7 @@ public class Task1 {
             if (number > 8) num8++;
             if (number == 1) num1++;
             if (number % 2 == 0) even++;
-            if (number % 2 != 0) notEven++;
+            else notEven++;
             sum += number;
 
         }
