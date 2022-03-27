@@ -25,12 +25,7 @@ public class User {
     }
 
     public boolean isSubscribed(User user){
-        for(User users: subscriptions) {
-            if(user.getUsername().equals(users.getUsername())) {
-               return true;
-            }
-        }
-        return false;
+        return this.subscriptions.contains(user);
     }
 
     public boolean isFriend(User user) {

@@ -2,7 +2,7 @@ package day11.task1;
 
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
-public class Picker extends Warehouse implements Worker {
+public class Picker implements Worker {
     private double salary;
     private boolean isPayed;
     private Warehouse warehouse;

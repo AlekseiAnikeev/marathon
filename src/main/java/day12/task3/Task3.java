@@ -1,5 +1,7 @@
 package day12.task3;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class Task3 {
@@ -19,7 +21,8 @@ public class Task3 {
 //        }
         System.out.println(musicBand); // вывод в одну строку
         Collections.shuffle(musicBand);
-        musicBand = groupsAfter2000(musicBand);
+        List<MusicBand> musicBandNew = groupsAfter2000(musicBand);
+        System.out.println(musicBandNew);
         System.out.println(musicBand);
     }
 
