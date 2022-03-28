@@ -11,7 +11,8 @@ public class Task4 {
         List<String> members2 = new ArrayList<>(Arrays.asList("Юрий Николаевич Клинских", "Владимир Михайлович Лобанов", "Виталий Васильевич Сукочёв", "Игорь Алексеевич Аникеев"));
         MusicBand sectorGazaNew = new MusicBand("Сектор Газа", 1987, members2);
         sectorGazaOld.printMembers();
-        MusicBand.transferMembers(sectorGazaNew, sectorGazaOld);
+        MusicBand.transferMembers(sectorGazaOld, sectorGazaNew);
+        sectorGazaNew.printMembers();
         sectorGazaOld.printMembers();
     }
 }

@@ -29,6 +29,7 @@ public class MusicBand {
         for (String member : a.getMember()) {
             b.getMember().add(member);
         }
+        a.getMember().clear();
     }
 
     public void printMembers() {
