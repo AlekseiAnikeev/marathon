@@ -12,22 +12,21 @@ public class Task2 {
         File file2 = new File("file2.txt");
         Random rand = new Random();
 
-        try (PrintWriter writer = new PrintWriter(file1)) {
+
+        try (PrintWriter writer = new PrintWriter(file1);
+             Scanner scanner = new Scanner(file1);
+             PrintWriter writer2 = new PrintWriter(file2)) {
             for (int i = 0; i < 1000; i++) {
                 writer.print(rand.nextInt(101) + " ");
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        try (Scanner scanner = new Scanner(file1); PrintWriter writer = new PrintWriter(file2)) {
+            writer.close();
             String[] numbers = scanner.nextLine().split(" ");
             for (int i = 0; i < numbers.length; i += 20) {
                 int sum = 0;
                 for (int j = i; j < i + 20; j++) {
                     sum += Integer.parseInt(numbers[j]);
                 }
-                writer.print(((double) sum / 20) + " ");
+                writer2.print(((double) sum / 20) + " ");
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
