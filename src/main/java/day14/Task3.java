@@ -20,11 +20,13 @@ public class Task3 {
                 String[] person = people.split(" ");
                 if (Integer.parseInt(person[1]) > 0)
                     list.add(new Person(person[0], person[1]));
-                else throw new IllegalArgumentException();
+                else throw new IllegalArgumentException("Некорректный входной файл");
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-        } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Некорректный входной файл");
             return null;
         }
