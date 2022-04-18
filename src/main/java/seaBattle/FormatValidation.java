@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author Aleksey Anikeev aka AgentChe
+ * Date of creation: 04.04.2022
+ */
+
 public class FormatValidation {
 
     private static boolean isVertical = true;
@@ -121,8 +126,6 @@ public class FormatValidation {
         // проверка в зависимости от кол-вoа палуб (3 или 4 палубы) последовательности ввода по оси х
 
         if (!(!xOk && !yOk)) {
-            System.out.println("1");
-
             if (!xOk) {
                 for (int i = 0; i < arrayX.length - 1; i++) {
                     int coordinateShip = arrayX[i + 1] - arrayX[i];

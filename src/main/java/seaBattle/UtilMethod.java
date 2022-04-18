@@ -2,18 +2,21 @@ package seaBattle;
 
 import java.util.List;
 
-import static seaBattle.FormatValidation.isVertical;
 import static seaBattle.GameObject.HALO;
+/**
+ * @author Aleksey Anikeev aka AgentChe
+ * Date of creation: 04.04.2022
+ */
 
 public class UtilMethod {
 
     private static final String errorText = "Ошибка расстановки корабля, необходимо помнить про \"ореол\" кораблей, который окружает корабли!";
 
     //метод проверки поля на отсутствие пересечений
-    public static boolean intersectionShip(GameObject[][] field, List<Integer> coordinate, GameObject ship) {
+    public static boolean intersectionShip(GameObject[][] field, List<Integer> coordinate, GameObject ship, boolean isVertical) {
         //проверка на количествопалуб
         if (ship.getValue() > 1) {
-            if (isVertical()) {
+            if (isVertical) {
                 //проверка координат на убывание/возрастание
                 if (coordinate.get(1) < coordinate.get(3)) {
                     for (int i = 0; i < ship.getValue(); i++) {
@@ -61,9 +64,9 @@ public class UtilMethod {
     }
 
     //отрисовка ореола
-    public static void drawHaloInField(GameObject[][] field, List<Integer> coordinate, GameObject ship) {
+    public static void drawHaloInField(GameObject[][] field, List<Integer> coordinate, GameObject ship, boolean isVertical) {
         if (coordinate.size() > 2) {
-            if (isVertical()) {
+            if (isVertical) {
                 if (coordinate.get(1) < coordinate.get(3)) {
                     //рисуем ореол по правому борту
                     if (coordinate.get(0) + 1 < 10) {
@@ -255,10 +258,10 @@ public class UtilMethod {
     }
 
     //отрисовка кораблей на поле
-    public static void drawShipInField(GameObject[][] field, List<Integer> coordinate, GameObject ship) {
+    public static void drawShipInField(GameObject[][] field, List<Integer> coordinate, GameObject ship, boolean isVertical) {
 
         if (coordinate.size() > 2) {
-            if (isVertical()) {
+            if (isVertical) {
                 if (coordinate.get(1) < coordinate.get(3)) {
                     for (int i = 0; i < ship.getValue(); i++) {
                         field[coordinate.get(1) + i][coordinate.get(0)] = ship;
